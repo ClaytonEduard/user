@@ -12,7 +12,7 @@ public class conexao extends SQLiteOpenHelper {
     // faz a interacao com banco de dados
     private static SQLiteDatabase instance;
 
-    public SQLiteDatabase getInstance() {
+    public static SQLiteDatabase getInstance() {
         return instance;
     }
 
@@ -27,10 +27,10 @@ public class conexao extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String tabelaUsuario = "";
         tabelaUsuario += " create table usuario ( ";
-        tabelaUsuario += " id integer primary key auto_increment, ";
+        tabelaUsuario += " id integer primary key autoincrement, ";
         tabelaUsuario += " nome varchar(255), ";
         tabelaUsuario += " login varchar(255), ";
-        tabelaUsuario += " senha varchar(255), ";
+        tabelaUsuario += " senha varchar(255) ";
         tabelaUsuario += " ); ";
 
         sqLiteDatabase.execSQL(tabelaUsuario);
